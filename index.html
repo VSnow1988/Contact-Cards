@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> CONTACT CARDS </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('form').on('submit',
+                            function(){
+                              console.log("form submitted");
+                              $('div').append("<div><h1>" + $("#first").val() + " " + $("#last").val() + "<br>"
+                              + $("#description").text() + "</div>");
+                            }
+                            return false;
+                          );
+      });
+
+    </script>
+    <style>
+      div {
+          display: inline;
+          margin-left: 100px;
+      }
+
+      h1 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      div div {
+        margin: 10px;
+        border: 5px solid #000;
+        text-align: center;
+        padding: 5px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      First Name: <input type="text" id="first"><br><br>
+      Last Name: <input type="text" id="last"><br><br>
+      Description:<br>
+      <textarea id="description">Enter Description</textarea>
+      <br><br>
+      <input type="submit" val="Add Card">
+    </form>
+    <div>
+
+
+    </div>
+  </body>
+</html>
